@@ -1,0 +1,291 @@
+/*---------------------------------------*\
+  $Variables
+\*---------------------------------------*/
+:root {
+  /* Color palette */
+  --color-first: #f44336;
+  --color-second: #c62828;
+  --color-accent: #0000;
+  --color-bg: #ffebee;
+  --color-text: #263238;
+
+  /* Filters | Color palette */
+  --color-filter-first: invert(34%) sepia(84%) saturate(2973%) hue-rotate(343deg) brightness(99%) contrast(93%);
+  --color-filter-second: invert(27%) sepia(29%) saturate(6263%) hue-rotate(347deg) brightness(81%) contrast(88%);
+  --color-filter-accent: invert(70%) sepia(88%) saturate(1174%) hue-rotate(360deg) brightness(103%) contrast(104%);
+  --color-filter-bg: invert(100%) sepia(21%) saturate(3874%) hue-rotate(288deg) brightness(104%) contrast(109%);
+  --color-filter-text: invert(15%) sepia(36%) saturate(332%) hue-rotate(155deg) brightness(97%) contrast(91%);
+}
+:root {
+  /* Typography */
+  --font-title: 'Rowdies', sans-serif;
+  --font-content: 'Rubik', sans-serif;
+  --h1-font-size: 3.95rem;
+  --h2-font-size: 1.56rem;
+  --h3-font-size: 1.25rem;
+  --body-font-size: 1rem;
+  --smaller-font-size: .8rem;
+  --small-font-size: .64rem;
+}
+:root {
+  /* Layout */
+  --header-height: 3rem;
+  --max-width: 64rem; /* 1024px */
+  --gutter: 1rem;
+  --border-radius: 1rem;
+}
+:root {
+  --opacity: .95;
+
+  /* Shadow */
+  --shadow-opacity: .1;
+  --shadow-move-y: .3em;
+  --shadow-move-x: .05em;
+  --shadow-blur: calc(var(--shadow-move-y));
+  --box-shadow: rgba(0, 0, 0, var(--shadow-opacity)) var(--shadow-move-x) var(--shadow-move-y) var(--shadow-blur);
+}
+
+
+/*---------------------------------------*\
+  $Base
+\*---------------------------------------*/
+*,
+*::after,
+*::before { box-sizing: border-box; }
+body {
+  font-size: var(--body-font-size);
+  font-family: var(--font-content);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+.main-header a { 
+  color: black;
+  text-decoration: none;  
+}
+a:hover{
+  color: var(--color-bg);
+}
+
+h1 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+h2,
+h3,
+h4,
+h5,
+h6 { 
+  margin-top: 1.5em;
+  margin-bottom: .5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { 
+  font-family: var(--font-title); 
+}
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-family: var(--font-content);
+}
+h1 { font-size: var(--h1-font-size); }
+h2 { font-size: var(--h2-font-size); }
+h3 { font-size: var(--h3-font-size); }
+
+
+/*---------------------------------------*\
+  $Icons
+\*---------------------------------------*/
+[class*=icon-] {
+  display: flex;
+  align-items: center;
+}
+[class*=icon-]::before {
+  --width: 1.5em;
+  content: "";
+  display: inline-block;
+  margin-right: .4em;
+  background-repeat: no-repeat;
+  width: var(--width);
+  height: var(--width);
+  filter: var(--color-filter-text);
+}
+/* .icon-example::before {
+  content: "";
+  background-image: url("../icons/icon-example.svg");
+} */
+
+
+/*---------------------------------------*\
+  $Layout
+\*---------------------------------------*/
+
+.l-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: var(--max-width);
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;  
+}
+
+.l-section {
+  margin-bottom: 2rem;
+  
+}
+
+.center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-content { 
+  text-align: center;  
+}
+
+/*---------------------------------------*\
+  $Adicional
+\*---------------------------------------*/
+
+.titulo:hover{
+  color: white;
+  cursor: pointer;
+}
+
+/* Styles for login form */
+.login-form {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.login-form h2 {
+  color: var(--color-first);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form p {
+  margin: 10px 0;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.login-form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-first);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color: var(--color-second);
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}
+
+
+/*---------------------------------------*\
+  $Pokemon
+\*---------------------------------------*/
+.pokemon-img{
+  width: 200px;
+  height: 200px;
+}
+
+h1 .titulo{
+  height: 20px;
+  width: 200px;
+}
+
+
+.btn-grad {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%);
+  margin: 10px;
+  padding: 9px 9px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.cuadro-datos{
+  padding-left: 250px;
+  padding-right: 250px;
+  border-radius: 20px;
+}
+
+.formulario{
+ 
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(209,209,209,1) 86%, rgba(96,95,95,0.9886363636363636) 90%, rgba(255,0,0,1) 93%);
+  
+}
+
+.datosedit{
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(209,209,209,1) 86%, rgba(96,95,95,0.9886363636363636) 90%, rgba(0,95,255,1) 93%);
+}
+
+.buscador{
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(209,209,209,1) 86%, rgba(96,95,95,0.9886363636363636) 90%, rgba(213,218,3,1) 93%);
+}
+
+
+.contenedor{
+  padding-left: 150px;
+  
+}
+
+
+/* Estilo para el div */
+.rounded-div {
+  border: 2px solid black; /* Borde negro */
+  border-radius: 10px; /* Bordes redondeados de 10px */
+  padding: 16px; /* Espaciado interno */
+  width: 300px; /* Ancho del div */
+  margin: 20px auto; /* Centrar el div horizontalmente */
+  background: rgb(0,155,255);
+background: linear-gradient(156deg, rgba(0,155,255,1) 18%, rgba(115,255,249,1) 55%, rgba(44,30,149,1) 100%);
+}
